@@ -2,5 +2,5 @@ services:
   - type: web
     name: coffee-label-generator
     env: python
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pipenv install --deploy --system"
     startCommand: "gunicorn app:app"
