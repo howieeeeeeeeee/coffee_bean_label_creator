@@ -1,0 +1,175 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Light background */
+    color: #333; /* Darker text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top, content will scroll if needed */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    display: flex;
+    gap: 2em; /* Space between form and preview */
+    width: 100%;
+    max-width: 1200px; /* Max width for the whole content */
+    align-items: stretch; /* Make children stretch to same height */
+}
+
+form {
+    background-color: #ffffff; /* White background for form */
+    padding: 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    flex: 1; /* Take equal space */
+    min-width: 300px; /* Minimum width for form */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6em;
+    font-weight: 600;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.9em;
+    margin-bottom: 1.5em;
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Lighter border */
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.download-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+button {
+    padding: 1em;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#preview-btn {
+    background-color: #6c757d; /* Gray */
+    color: white;
+}
+
+#preview-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+#download-btn {
+    background-color: #6c757d; /* Gray */
+    color: white;
+}
+
+#download-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+#download-rotated-btn {
+    background-color: #6c757d; /* Gray */
+    color: white;
+}
+
+#download-rotated-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+#preview-container {
+    display: none; /* Hidden by default */
+    text-align: center;
+    flex: 1; /* Take equal space */
+    min-width: 300px; /* Minimum width for preview */
+    background-color: #ffffff; /* White background for preview */
+    padding: 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex; /* Use flex to center image vertically if needed */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#preview-image {
+    max-width: 100%;
+    height: 500px; /* Fixed height */
+    object-fit: contain; /* Maintain aspect ratio */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column; /* Stack on smaller screens */
+        align-items: center;
+    }
+
+    form, #preview-container {
+        width: 100%;
+        max-width: 550px; /* Limit width when stacked */
+        margin-bottom: 2em; /* Space between stacked sections */
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 1.5em;
+    }
+
+    .download-buttons {
+        grid-template-columns: 1fr; /* Stack download buttons on small screens */
+    }
+
+    button {
+        font-size: 1em;
+        padding: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    form, #preview-container {
+        padding: 1em;
+    }
+
+    input, select {
+        padding: 0.7em;
+        margin-bottom: 1em;
+    }
+}

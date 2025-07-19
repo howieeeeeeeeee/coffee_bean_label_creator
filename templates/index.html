@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Label Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <form action="/generate" method="post">
+            <label for="origin">產地:</label>
+            <select id="origin" name="origin">
+                <option value="衣索比亞" selected>衣索比亞</option>
+                <option value="肯亞">肯亞</option>
+                <option value="哥倫比亞">哥倫比亞</option>
+                <option value="哥斯大黎加">哥斯大黎加</option>
+                <option value="巴拿馬">巴拿馬</option>
+                <option value="印尼">印尼</option>
+            </select>
+
+            <label for="bean_name">咖啡豆名稱 (中文):</label>
+            <input type="text" id="bean_name" name="bean_name" value="嘉爾加">
+
+            <label for="bean_english_name">咖啡豆名稱 (英文):</label>
+            <input type="text" id="bean_english_name" name="bean_english_name" value="TOH NO.5">
+
+            <label for="processing">處理法:</label>
+            <input type="text" id="processing" name="processing" value="水洗處理">
+
+            <label for="roast_level">烘焙程度:</label>
+            <input type="text" id="roast_level" name="roast_level" value="淺中焙">
+
+            <label for="flavor">風味描述:</label>
+            <input type="text" id="flavor" name="flavor" value="白花、橙果、太妃糖">
+
+            <label for="roasting_date">烘焙日期:</label>
+            <input type="text" id="roasting_date" name="roasting_date" value="">
+
+            <div class="controls">
+                <button type="button" id="preview-btn">預覽</button>
+                <div class="download-buttons">
+                    <button type="submit" id="download-btn">下載</button>
+                    <button type="button" id="download-rotated-btn">下載（旋轉）</button>
+                </div>
+            </div>
+        </form>
+        <div id="preview-container">
+            <img id="preview-image" src="" alt="Label Preview">
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
