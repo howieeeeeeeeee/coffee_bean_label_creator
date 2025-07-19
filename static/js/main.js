@@ -3,9 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     const previewBtn = document.getElementById('preview-btn');
     const previewImage = document.getElementById('preview-image');
-    const previewContainer = document.getElementById('preview-container');
-
+    const previewPlaceholder = document.getElementById('preview-placeholder');
     const downloadRotatedBtn = document.getElementById('download-rotated-btn');
+
+    // Initial state: hide image, show placeholder
+    previewImage.style.display = 'none';
+    previewPlaceholder.style.display = 'block';
 
     previewBtn.addEventListener('click', async () => {
         const formData = new FormData(form);
@@ -21,9 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const imageBlob = await response.blob();
             const imageUrl = URL.createObjectURL(imageBlob);
             previewImage.src = imageUrl;
-            previewContainer.style.display = 'block';
+            previewImage.style.display = 'block'; // Show image
+            previewPlaceholder.style.display = 'none'; // Hide placeholder
         } else {
             alert('Error generating preview.');
+            previewImage.style.display = 'none'; // Hide image on error
+            previewPlaceholder.style.display = 'block'; // Show placeholder on error
         }
     });
 

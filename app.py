@@ -21,7 +21,7 @@ def generate():
     flavor = request.form.get("flavor")
     roasting_date = request.form.get("roasting_date")
 
-    action = request.args.get("action", "download")
+    action = request.form.get("action", "download")
 
     # Load assets
     template_img = Image.open("static/template.png")
@@ -135,7 +135,7 @@ def generate():
     return send_file(
         img_io,
         mimetype="image/png",
-        as_attachment=(action == "download"),
+        as_attachment=(action == "download" or action == "download_rotated"),
         download_name=f"{bean_name}.png",
     )
 

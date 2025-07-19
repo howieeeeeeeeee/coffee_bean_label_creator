@@ -7,13 +7,13 @@ body {
     align-items: flex-start; /* Align to top, content will scroll if needed */
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 20px; /* Slightly reduced padding from 30px */
     box-sizing: border-box;
 }
 
 .main-content {
     display: flex;
-    gap: 2em; /* Space between form and preview */
+    gap: 1em; /* Reduced gap */
     width: 100%;
     max-width: 1200px; /* Max width for the whole content */
     align-items: stretch; /* Make children stretch to same height */
@@ -21,7 +21,7 @@ body {
 
 form {
     background-color: #ffffff; /* White background for form */
-    padding: 2.5em;
+    padding: 1.5em; /* Reduced padding */
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
     flex: 1; /* Take equal space */
@@ -30,15 +30,15 @@ form {
 
 label {
     display: block;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.4em; /* Reduced margin */
     font-weight: 600;
     color: #555;
 }
 
 input, select {
     width: 100%;
-    padding: 0.9em;
-    margin-bottom: 1.5em;
+    padding: 0.8em; /* Slightly reduced padding */
+    margin-bottom: 0.8em; /* Reduced margin */
     border-radius: 8px;
     border: 1px solid #ddd; /* Lighter border */
     background-color: #f9f9f9;
@@ -46,6 +46,17 @@ input, select {
     box-sizing: border-box;
     font-size: 1em;
     transition: border-color 0.3s ease;
+}
+
+select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%236c757d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-5.4H18.6c-5%200-9.3%201.8-13.2%205.4-3.9%203.6-5.9%208.1-5.9%2013.2%200%205%201.8%209.3%205.4%2013.2l128%20128c3.6%203.9%208.1%205.9%2013.2%205.9s9.3-1.8%2013.2-5.4l128-128c3.9-3.6%205.9-8.1%205.9-13.2%200-5-1.8-9.3-5.4-13.2z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    background-size: 0.65em auto;
+    padding-right: 2.5em; /* Space for the arrow */
 }
 
 input:focus, select:focus {
@@ -56,22 +67,22 @@ input:focus, select:focus {
 .controls {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    margin-top: 1.5em;
+    gap: 0.8em; /* Reduced gap */
+    margin-top: 1em; /* Reduced margin */
 }
 
 .download-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    gap: 0.8em; /* Reduced gap */
 }
 
 button {
-    padding: 1em;
+    padding: 0.8em; /* Reduced padding */
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1em; /* Slightly reduced font size */
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -107,15 +118,14 @@ button {
 }
 
 #preview-container {
-    display: none; /* Hidden by default */
+    display: flex; /* Changed from none to flex for initial display */
     text-align: center;
     flex: 1; /* Take equal space */
     min-width: 300px; /* Minimum width for preview */
     background-color: #ffffff; /* White background for preview */
-    padding: 2.5em;
+    padding: 1.5em; /* Reduced padding */
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    display: flex; /* Use flex to center image vertically if needed */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -130,6 +140,12 @@ button {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+.placeholder-message {
+    color: #888;
+    font-size: 1.2em;
+    margin-top: 15px; /* Reduced margin */
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .main-content {
@@ -140,13 +156,13 @@ button {
     form, #preview-container {
         width: 100%;
         max-width: 550px; /* Limit width when stacked */
-        margin-bottom: 2em; /* Space between stacked sections */
+        margin-bottom: 1em; /* Reduced margin */
     }
 }
 
 @media (max-width: 768px) {
     form {
-        padding: 1.5em;
+        padding: 1.2em; /* Reduced padding */
     }
 
     .download-buttons {
@@ -154,8 +170,8 @@ button {
     }
 
     button {
-        font-size: 1em;
-        padding: 0.8em;
+        font-size: 0.9em; /* Reduced font size */
+        padding: 0.7em; /* Reduced padding */
     }
 }
 
@@ -164,12 +180,12 @@ button {
         padding: 10px;
     }
 
-    form, #preview-container {
-        padding: 1em;
+    form {
+        padding: 0.8em; /* Reduced padding */
     }
 
     input, select {
-        padding: 0.7em;
-        margin-bottom: 1em;
+        padding: 0.6em; /* Reduced padding */
+        margin-bottom: 0.8em; /* Reduced margin */
     }
 }
