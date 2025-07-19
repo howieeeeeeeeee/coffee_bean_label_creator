@@ -4,7 +4,7 @@
 
 Welcome to my Coffee Bean Label Generator! This application is specifically designed for my home coffee roasting business, aiming to help me quickly and easily create beautiful, custom labels for my freshly roasted coffee beans.
 
-Through this tool, users (which is me!) can input detailed information about a coffee bean, such as its origin, name, processing method, roast level, flavor notes, and even the roasting date. The backend server then composites this information onto a predefined label template and provides a downloadable PNG image.
+Through this tool, users (which is my dad) can input detailed information about a coffee bean, such as its origin, name, processing method, roast level, flavor notes, and even the roasting date. The backend server then composites this information onto a predefined label template and provides a downloadable PNG image.
 
 ## Key Features
 
