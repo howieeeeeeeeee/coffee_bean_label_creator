@@ -1,6 +1,6 @@
 services:
   - type: web
     name: coffee-label-generator
-    env: python
+    runtime: python
     buildCommand: "pipenv install --deploy --system"
-    startCommand: "gunicorn app:app"
+    startCommand: "gunicorn --workers 1 --threads 8 --bind 0.0.0.0:$PORT app:app"
